@@ -10,7 +10,7 @@ public class PublishArticleTemplate {
     private String title;
     private String description;
     private byte[] image;
-    private LocalDateTime publishedAt;
+    private String publishedAt;
     private String content;
     private int status;
 
@@ -80,11 +80,11 @@ public class PublishArticleTemplate {
         this.image = image;
     }
 
-    public LocalDateTime getPublishedAt() {
+    public String getPublishedAt() {
         return publishedAt;
     }
 
-    public void setPublishedAt(LocalDateTime publishedAt) {
+    public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
 

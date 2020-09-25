@@ -53,8 +53,6 @@ public class ArticleController {
     @PostMapping
     @ResponseBody
     public ResponseEntity<Article> insertArticle(@RequestBody PublishArticleTemplate publishArticleTemplate) {
-	    System.out.println(publishArticleTemplate.getUser_id());
-
 	    User user = userService.findUserById(publishArticleTemplate.getUser_id());
         if(user == null) {
             return ResponseEntity.badRequest().build();

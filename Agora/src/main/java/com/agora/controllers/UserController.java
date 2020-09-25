@@ -1,5 +1,7 @@
 package com.agora.controllers;
+import com.agora.models.Article;
 import com.agora.models.LoginTemplate;
+import com.agora.services.ArticleService;
 import com.agora.services.HashingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,12 +27,14 @@ public class UserController {
 
     private UserService service;
     private HashingService hashingService;
+    private ArticleService articleService;
 
 
     @Autowired
-    public UserController(UserService userService, HashingService hashingService) {
+    public UserController(UserService userService, HashingService hashingService, ArticleService articleService) {
         this.service = userService;
         this.hashingService = hashingService;
+        this.articleService = articleService;
     }
 
     @CrossOrigin
@@ -45,6 +49,16 @@ public class UserController {
         return ResponseEntity.ok(result);
     }
 
+    @CrossOrigin
+    @GetMapping(value = "/{user_id}/articles", produces="application/json")
+    @ResponseBody
+    public ResponseEntity<Set<Article>> findArticlesByUserId(@PathVariable String user_id){
+        Set<Article> articles = articleService.getArticleByUserId(Integer.parseInt(user_id));
+        if(articles == null) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(articles);
+    }
 
     @CrossOrigin
     @GetMapping(value = "{id}", produces = "application/json")

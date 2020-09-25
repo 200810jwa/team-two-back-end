@@ -25,14 +25,14 @@ public class Article {
 	private String title;
 	private String description;
 	private byte[] image;
-	private LocalDateTime publishedAt;
+	private String publishedAt;
 	private String content;
 	private int status;
 	
 	public Article() {
 		super();
 	}
-	public Article(int article_id, User user, String title, String description, byte[] image, LocalDateTime publishedAt, String content,
+	public Article(int article_id, User user, String title, String description, byte[] image, String publishedAt, String content,
 				   int status) {
 		super();
 		this.article_id = article_id;
@@ -45,7 +45,7 @@ public class Article {
 		this.status = status;
 	}
 
-	public Article(User user, String title, String description, byte[] image, LocalDateTime publishedAt, String content, int status) {
+	public Article(User user, String title, String description, byte[] image, String publishedAt, String content, int status) {
 		this.user = user;
 		this.title = title;
 		this.description = description;
@@ -79,10 +79,10 @@ public class Article {
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
-	public LocalDateTime getPublishedAt() {
+	public String getPublishedAt() {
 		return publishedAt;
 	}
-	public void setPublishedAt(LocalDateTime publishedAt) {
+	public void setPublishedAt(String publishedAt) {
 		this.publishedAt = publishedAt;
 	}
 	public String getContent() {

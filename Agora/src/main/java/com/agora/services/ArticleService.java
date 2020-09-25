@@ -41,4 +41,6 @@ public class ArticleService {
     	return art; 
     }
 
+    public Set<Article> getArticleByUserId(int user_id) {return articleDAO.getArticleByUserId(user_id);}
+
 }

@@ -31,20 +31,39 @@ public class ArticleDAO {
 	public Article findArticleById(int ar_id) {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
-    try {
-        Article result = session.createQuery("FROM Article a where article_id = ?1", Article.class)
-                .setParameter(1, ar_id)
-                .getSingleResult();
+        try {
+            Article result = session.createQuery("FROM Article a where article_id = ?1", Article.class)
+                    .setParameter(1, ar_id)
+                    .getSingleResult();
 
-        tx.commit();
-        return result;
-    } catch(NoResultException e) {
-        e.printStackTrace();
-        tx.rollback();
-        return null;
-    }
+            tx.commit();
+            return result;
+        } catch(NoResultException e) {
+            e.printStackTrace();
+            tx.rollback();
+            return null;
+        }
     
 	}
+
+
+	public Set<Article> getArticleByUserId(int user_id) {
+	    Session session = HibernateUtil.getSession();
+	    Transaction tx = session.beginTransaction();
+	    try {
+	        Set<Article> articles = session.createNativeQuery("SELECT * FROM articles WHERE user_id = ?1", Article.class)
+                    .setParameter(1, user_id)
+                    .getResultStream()
+                    .collect(Collectors.toSet());
+
+	        tx.commit();
+	        return articles;
+        } catch (NoResultException e){
+	        e.printStackTrace();
+	        tx.rollback();
+	        return null;
+        }
+    }
 
 
     public void save(Article art) {
