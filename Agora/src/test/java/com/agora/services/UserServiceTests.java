@@ -100,5 +100,9 @@ public class UserServiceTests {
 		User mockUser4 = userServiceMock.findUserById(1);
 		assertNotEquals(mockUser3, mockUser4);
 	}
+	@Test
+	public void TestEquals() {
+		assertFalse(mockUser1.equals(null));
+	}
 
 }

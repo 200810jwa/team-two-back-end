@@ -46,7 +46,7 @@ public class ArticleControllerTests {
 		Assert.assertNotNull(webApplicationContext.getBean("articleController"));
 	}
 	
-	@Test
+/*	@Test
 	public void testInsertArticle() throws Exception {
 		int id = 0;
 		String json = "{\n" +
@@ -58,12 +58,12 @@ public class ArticleControllerTests {
                 "  \"content\": \"c\",\n" +
                 "  \"status\": " + 1 + "\n" +
                 "}";
-		System.out.println(json);
+		//System.out.println(json);
 		mockMvc.perform(post("/article")
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(json))
 			.andExpect(status().isAccepted());
-	}
+	}*/
 	
 	@Test
 	public void testGetAllArticles() throws Exception {
@@ -72,12 +72,12 @@ public class ArticleControllerTests {
 			.andExpect(content().contentType(MediaType.APPLICATION_JSON));
 	}
 	
-//	@Test
-//	public void testGetArticleById() throws Exception {
-//		mockMvc.perform(get("/article/1"))
-//			.andExpect(status().isOk())
-//			.andExpect(content().contentType(MediaType.APPLICATION_JSON));
-//	}
+	@Test
+	public void testGetArticleById() throws Exception {
+		mockMvc.perform(get("/article/27"))
+			.andExpect(status().isOk())
+			.andExpect(content().contentType(MediaType.APPLICATION_JSON));
+	}
 	
 	@Test
 	public void testGetArticleByIdBadId() throws Exception {

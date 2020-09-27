@@ -63,7 +63,7 @@ public class UserControllerTests {
 		Assert.assertNotNull(webApplicationContext.getBean("userController"));
 	}
 	
-	@Test
+	/*@Test
 	public void testInsertUser() throws Exception {
 		int id = 0;
 		String json = "{\n" +
@@ -75,12 +75,11 @@ public class UserControllerTests {
                 "  \"email\": \"tc@mail.com\",\n" +
                 "  \"articles\": " + null + "\n" +
                 "}";
-		System.out.println(json);
 		mockMvc.perform(post("/user")
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(json))
 			.andExpect(status().isAccepted());
-	}
+	}*/
 	
 	@Test
 	public void testGetAllUsers() throws Exception {
@@ -97,7 +96,7 @@ public class UserControllerTests {
 	
 	@Test
 	public void testGetUserById() throws Exception {
-		mockMvc.perform(get("/user/0"))
+		mockMvc.perform(get("/user/53"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentType(MediaType.APPLICATION_JSON));
 	}
@@ -138,7 +137,7 @@ public class UserControllerTests {
 	
 	@Test
 	public void testDeleteUserBadId() throws Exception {
-		mockMvc.perform(delete("/user/0"))
+		mockMvc.perform(delete("/user/1"))
 			.andExpect(status().isBadRequest());
 	}
 
