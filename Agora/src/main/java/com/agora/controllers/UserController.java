@@ -1,4 +1,5 @@
 package com.agora.controllers;
+import com.agora.logger.Log4J;
 import com.agora.models.Article;
 import com.agora.models.LoginTemplate;
 import com.agora.services.ArticleService;
@@ -28,6 +29,7 @@ public class UserController {
     private UserService service;
     private HashingService hashingService;
     private ArticleService articleService;
+    private Log4J log = new Log4J();
 
 
     @Autowired
@@ -43,9 +45,10 @@ public class UserController {
     public ResponseEntity<Set<User>> findAll() {
         Set<User> result = service.findAll();
         if(result.isEmpty()) {
+        	log.getUsersF();
             return ResponseEntity.noContent().build();
         }
-
+        log.getUsersS();
         return ResponseEntity.ok(result);
     }
 
@@ -55,8 +58,10 @@ public class UserController {
     public ResponseEntity<Set<Article>> findArticlesByUserId(@PathVariable String user_id){
         Set<Article> articles = articleService.getArticleByUserId(Integer.parseInt(user_id));
         if(articles == null) {
+        	log.getArticlesS();
             return ResponseEntity.noContent().build();
         }
+        log.getArticlesF();
         return ResponseEntity.ok(articles);
     }
 
@@ -66,9 +71,10 @@ public class UserController {
     public ResponseEntity<User> findById(@PathVariable String id) {
         User result = service.findUserById(Integer.parseInt(id));
         if(result == null) {
+        	log.getUserS();
             return ResponseEntity.noContent().build();
         }
-
+        log.getUserF();
         return ResponseEntity.ok(result);
     }
 
@@ -85,9 +91,10 @@ public class UserController {
 
         if(user.getUser_id() == 0) {
             // Failed to insert properly
+        	log.registerF();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
-
+        log.registerS();
         return ResponseEntity.accepted().body(user);
     }
 
@@ -97,6 +104,7 @@ public class UserController {
     public ResponseEntity<User> signIn(@RequestBody LoginTemplate loginTemplate) {
 
         if(loginTemplate.getUserName() == null) {
+        	log.loginF();
             return ResponseEntity.badRequest().build();
         }
         boolean usernameExists = service.checkUsername(loginTemplate);
@@ -104,12 +112,15 @@ public class UserController {
             User curr_user = service.findByUserName(loginTemplate);
             boolean password_matches = hashingService.checkHashedPassword(loginTemplate.getPassword(), curr_user.getPassword());
             if(password_matches){
+            	log.loginS();
                 return ResponseEntity.accepted().body(service.findByUserName(loginTemplate));
             } else {
+            	log.loginF();
                 return ResponseEntity.badRequest().build();
             }
 
         } else {
+        	log.loginF();
             return ResponseEntity.badRequest().build();
         }
     }

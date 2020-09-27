@@ -1,4 +1,5 @@
 package com.agora.controllers;
+import com.agora.logger.Log4J;
 import com.agora.models.Article;
 import com.agora.models.PublishArticleTemplate;
 import com.agora.models.User;
@@ -18,6 +19,7 @@ public class ArticleController {
 	
 	private ArticleService service;
 	private UserService userService;
+	private Log4J log = new Log4J();
 
 	@Autowired
     public ArticleController(ArticleService service, UserService userService) {
@@ -31,9 +33,10 @@ public class ArticleController {
     public ResponseEntity<Set<Article>> findAllArticles() {
         Set<Article> result = service.findAll();
         if(result.isEmpty()) {
+        	log.getArticlesF();
             return ResponseEntity.noContent().build();
         }
-
+        log.getArticlesS();
         return ResponseEntity.ok(result);
     }
 
@@ -43,9 +46,10 @@ public class ArticleController {
     public ResponseEntity<Article> findArticleById(@PathVariable String id) {
         Article result = service.findArticleById(Integer.parseInt(id));
         if(result == null) {
+        	log.getArticleF();
             return ResponseEntity.noContent().build();
         }
-
+        log.getArticleS();
         return ResponseEntity.ok(result);
     }
 
@@ -55,6 +59,7 @@ public class ArticleController {
     public ResponseEntity<Article> insertArticle(@RequestBody PublishArticleTemplate publishArticleTemplate) {
 	    User user = userService.findUserById(publishArticleTemplate.getUser_id());
         if(user == null) {
+        	log.articleUploadF();
             return ResponseEntity.badRequest().build();
         }
 
@@ -62,6 +67,7 @@ public class ArticleController {
                 publishArticleTemplate.getContent(), publishArticleTemplate.getStatus());
 
 	    if(article.getArticle_id() != 0) {
+	    	log.articleUploadF();
             return ResponseEntity.badRequest().build();
         }
 
@@ -69,9 +75,10 @@ public class ArticleController {
 
         if(article.getArticle_id() == 0) {
             // Failed to insert properly
+        	log.articleUploadF();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
-
+        log.articleUploadS();
         return ResponseEntity.accepted().body(article);
     }
 
