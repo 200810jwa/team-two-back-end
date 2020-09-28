@@ -38,6 +38,7 @@ public class AgoraRegistration {
         this.driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         this.modal = driver.findElement(By.id("homePageModal"));
         this.registrationToggleButton = driver.findElement(By.id("toggleToRegistration"));
+        this.registrationToggleButton.click();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 
         this.firstName = this.modal.findElement(By.id("registrationFirstname"));
@@ -46,6 +47,39 @@ public class AgoraRegistration {
         this.password = this.modal.findElement(By.id("registrationPassword"));
         this.email = this.modal.findElement(By.id("registrationEmail"));
         this.registrationSubmitButton = this.modal.findElement(By.id("registrationSubmitButton"));
+    }
+
+
+
+    public void setFirstName(String firstName) {
+        this.firstName.clear();
+        this.firstName.sendKeys(firstName);
+    }
+
+    public void setLastName(String lastName){
+        this.lastName.clear();
+        this.lastName.sendKeys(lastName);
+    }
+
+    public void setUsername(String username) {
+        this.username.clear();
+        this.username.sendKeys(username);
+    }
+
+    public void setPassword(String password) {
+        this.password.clear();
+        this.password.sendKeys(password);
+    }
+
+    public void setEmail(String email) {
+        this.email.clear();
+        this.email.sendKeys(email);
+    }
+
+    public void closeModal(boolean element_exists) {
+        if(element_exists) {
+            this.modal.findElement(By.id("closeModal")).click();
+        }
     }
 
 }

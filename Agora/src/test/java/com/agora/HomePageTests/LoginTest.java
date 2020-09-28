@@ -48,6 +48,21 @@ public class LoginTest {
     }
 
     @Test
+    public void testTitleOfLoginForm() {
+        WebElement title = agoraLogin.modal.findElement(By.id("loginFormTitle"));
+        String title_text = title.getText();
+        assertEquals(title_text, "Login");
+    }
+
+    @Test
+    public void testBothInputsExist() {
+        boolean inputs_exist = agoraLogin.username.isDisplayed() && agoraLogin.password.isDisplayed();
+
+        assertTrue(inputs_exist);
+    }
+
+
+    @Test
     public void testSuccessfulLogin() {
         agoraLogin.login();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -173,12 +188,9 @@ public class LoginTest {
     @Test
     public void testUnableToLoginWithoutPassword() {
         agoraLogin.loginWithoutPassword();
-
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         boolean element_exists = agoraLogin.modal.isDisplayed();
-
         assertTrue(element_exists);
-
         agoraLogin.closeModal(element_exists);
 
     }
@@ -188,11 +200,8 @@ public class LoginTest {
         agoraLogin.touchUsername();
         agoraLogin.touchPassword();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-
         boolean element_exists = agoraLogin.modal.findElement(By.id("usernameError")).isDisplayed();
-
         assertTrue(element_exists);
-
         agoraLogin.closeModal(element_exists);
     }
 
@@ -201,11 +210,8 @@ public class LoginTest {
         agoraLogin.touchPassword();
         agoraLogin.touchUsername();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-
         boolean element_exists = agoraLogin.modal.findElement(By.id("passwordError")).isDisplayed();
-
         assertTrue(element_exists);
-
         agoraLogin.closeModal(element_exists);
     }
 }

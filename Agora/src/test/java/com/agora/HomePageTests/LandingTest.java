@@ -5,6 +5,7 @@ import com.agora.pages.AgoraLogin;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
@@ -43,6 +44,18 @@ public class LandingTest {
 
     }
 
+
+    @Test
+    public void checkOpenModal() {
+        agoraHome.loginButton.click();
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        WebElement modal = driver.findElement(By.id("homePageModal"));
+        boolean element_exists = modal.isDisplayed();
+
+        assertTrue(element_exists);
+
+        modal.findElement(By.id("closeModal")).click();
+    }
 
     @Test
     public void checkSportsCategoryButtonRoutesCorrectly() {

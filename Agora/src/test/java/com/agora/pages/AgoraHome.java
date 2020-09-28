@@ -26,7 +26,7 @@ public class AgoraHome {
     public WebElement cryptocurrencyCategoryButton;
     public WebElement searchField;
     public WebElement searchButton;
-
+    public WebElement loginButton;
 
     public AgoraHome(WebDriver driver) {
         super();
@@ -48,9 +48,9 @@ public class AgoraHome {
         this.cryptocurrencyCategoryButton = driver.findElement(By.id("cryptocurrency-category-button"));
         this.searchField = driver.findElement(By.id("queryParam"));
         this.searchButton = driver.findElement(By.id("search-btn"));
+        this.loginButton = driver.findElement(By.id("login-link"));
+
     }
-
-
     public void clickSportsCategoryButton() {
         this.sportsCategoryButton.click();
     }
