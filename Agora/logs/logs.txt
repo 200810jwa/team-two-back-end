@@ -97,3 +97,10 @@
 2020-09-27 22:43:45 INFO  Log4J:10 - Login success
 2020-09-27 22:43:47 ERROR Log4J:14 - Login fail
 2020-09-27 22:43:48 INFO  Log4J:10 - Login success
+2020-09-27 23:06:16 ERROR Log4J:14 - Login fail
+2020-09-27 23:06:17 ERROR Log4J:14 - Login fail
+2020-09-27 23:06:18 INFO  Log4J:10 - Login success
+2020-09-27 23:06:22 INFO  Log4J:10 - Login success
+2020-09-27 23:06:25 INFO  Log4J:10 - Login success
+2020-09-27 23:06:28 ERROR Log4J:14 - Login fail
+2020-09-27 23:06:29 INFO  Log4J:10 - Login success
