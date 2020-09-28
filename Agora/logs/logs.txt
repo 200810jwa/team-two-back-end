@@ -1,0 +1,99 @@
+2020-09-27 17:08:10 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-09-27 17:08:12 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-27 17:08:13 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-09-27 17:08:13 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://training.cajbrppof0jp.us-east-2.rds.amazonaws.com/jwa200810]
+2020-09-27 17:08:13 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=neff}
+2020-09-27 17:08:13 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-09-27 17:08:13 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 10 (min=1)
+2020-09-27 17:08:14 INFO  Dialect:170 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-09-27 17:08:18 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2b6aa919] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2020-09-27 17:08:18 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-27 17:08:19 INFO  Log4J:42 - Get users success
+2020-09-27 19:14:14 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-09-27 19:14:15 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-27 19:14:16 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-09-27 19:14:16 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://training.cajbrppof0jp.us-east-2.rds.amazonaws.com/jwa200810]
+2020-09-27 19:14:16 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=neff}
+2020-09-27 19:14:16 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-09-27 19:14:16 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 10 (min=1)
+2020-09-27 19:14:16 INFO  Dialect:170 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-09-27 19:14:19 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60680548] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2020-09-27 19:14:20 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-27 19:14:21 INFO  Log4J:10 - Login success
+2020-09-27 19:15:33 INFO  Log4J:10 - Login success
+2020-09-27 19:15:56 INFO  Log4J:10 - Login success
+2020-09-27 19:18:20 INFO  Log4J:10 - Login success
+2020-09-27 19:21:50 INFO  Log4J:10 - Login success
+2020-09-27 19:22:33 ERROR Log4J:14 - Login fail
+2020-09-27 19:22:44 INFO  Log4J:10 - Login success
+2020-09-27 19:23:21 ERROR Log4J:14 - Login fail
+2020-09-27 19:27:14 ERROR Log4J:14 - Login fail
+2020-09-27 19:27:20 INFO  Log4J:10 - Login success
+2020-09-27 19:28:01 INFO  Log4J:10 - Login success
+2020-09-27 19:32:51 INFO  Log4J:10 - Login success
+2020-09-27 19:33:39 INFO  Log4J:10 - Login success
+2020-09-27 19:34:55 INFO  Log4J:10 - Login success
+2020-09-27 19:35:16 ERROR Log4J:14 - Login fail
+2020-09-27 19:36:03 ERROR Log4J:14 - Login fail
+2020-09-27 19:36:15 ERROR Log4J:14 - Login fail
+2020-09-27 19:36:16 INFO  Log4J:10 - Login success
+2020-09-27 19:37:10 ERROR Log4J:14 - Login fail
+2020-09-27 19:37:11 INFO  Log4J:10 - Login success
+2020-09-27 19:37:12 ERROR Log4J:14 - Login fail
+2020-09-27 19:38:05 ERROR Log4J:14 - Login fail
+2020-09-27 19:38:06 ERROR Log4J:14 - Login fail
+2020-09-27 19:38:07 INFO  Log4J:10 - Login success
+2020-09-27 19:38:08 ERROR Log4J:14 - Login fail
+2020-09-27 20:19:21 INFO  Log4J:10 - Login success
+2020-09-27 20:21:36 ERROR Log4J:14 - Login fail
+2020-09-27 20:21:36 ERROR Log4J:14 - Login fail
+2020-09-27 20:21:38 INFO  Log4J:10 - Login success
+2020-09-27 20:21:39 ERROR Log4J:14 - Login fail
+2020-09-27 20:24:40 ERROR Log4J:14 - Login fail
+2020-09-27 20:24:41 ERROR Log4J:14 - Login fail
+2020-09-27 20:24:43 INFO  Log4J:10 - Login success
+2020-09-27 20:24:45 INFO  Log4J:10 - Login success
+2020-09-27 20:24:46 ERROR Log4J:14 - Login fail
+2020-09-27 20:25:13 INFO  Log4J:10 - Login success
+2020-09-27 20:26:17 INFO  Log4J:10 - Login success
+2020-09-27 20:28:03 INFO  Log4J:10 - Login success
+2020-09-27 20:31:01 ERROR Log4J:14 - Login fail
+2020-09-27 20:31:02 ERROR Log4J:14 - Login fail
+2020-09-27 20:31:03 INFO  Log4J:10 - Login success
+2020-09-27 20:31:06 INFO  Log4J:10 - Login success
+2020-09-27 20:31:08 ERROR Log4J:14 - Login fail
+2020-09-27 20:34:10 INFO  Log4J:10 - Login success
+2020-09-27 20:39:07 ERROR Log4J:14 - Login fail
+2020-09-27 20:39:08 ERROR Log4J:14 - Login fail
+2020-09-27 20:39:10 INFO  Log4J:10 - Login success
+2020-09-27 20:39:34 INFO  Log4J:10 - Login success
+2020-09-27 20:40:27 INFO  Log4J:10 - Login success
+2020-09-27 21:17:39 INFO  Log4J:10 - Login success
+2020-09-27 21:17:59 ERROR Log4J:14 - Login fail
+2020-09-27 21:18:00 ERROR Log4J:14 - Login fail
+2020-09-27 21:18:02 INFO  Log4J:10 - Login success
+2020-09-27 21:18:06 INFO  Log4J:10 - Login success
+2020-09-27 21:18:09 INFO  Log4J:10 - Login success
+2020-09-27 21:18:12 ERROR Log4J:14 - Login fail
+2020-09-27 21:18:13 INFO  Log4J:10 - Login success
+2020-09-27 21:47:20 ERROR Log4J:14 - Login fail
+2020-09-27 21:47:21 ERROR Log4J:14 - Login fail
+2020-09-27 21:47:23 INFO  Log4J:10 - Login success
+2020-09-27 21:47:25 INFO  Log4J:10 - Login success
+2020-09-27 21:47:28 INFO  Log4J:10 - Login success
+2020-09-27 21:47:29 ERROR Log4J:14 - Login fail
+2020-09-27 21:47:31 INFO  Log4J:10 - Login success
+2020-09-27 22:42:17 ERROR Log4J:14 - Login fail
+2020-09-27 22:42:17 ERROR Log4J:14 - Login fail
+2020-09-27 22:42:18 INFO  Log4J:10 - Login success
+2020-09-27 22:42:23 INFO  Log4J:10 - Login success
+2020-09-27 22:42:26 INFO  Log4J:10 - Login success
+2020-09-27 22:42:29 ERROR Log4J:14 - Login fail
+2020-09-27 22:42:30 INFO  Log4J:10 - Login success
+2020-09-27 22:43:35 ERROR Log4J:14 - Login fail
+2020-09-27 22:43:37 ERROR Log4J:14 - Login fail
+2020-09-27 22:43:38 INFO  Log4J:10 - Login success
+2020-09-27 22:43:43 INFO  Log4J:10 - Login success
+2020-09-27 22:43:45 INFO  Log4J:10 - Login success
+2020-09-27 22:43:47 ERROR Log4J:14 - Login fail
+2020-09-27 22:43:48 INFO  Log4J:10 - Login success

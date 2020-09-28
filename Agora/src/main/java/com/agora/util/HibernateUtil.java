@@ -9,9 +9,12 @@ public class HibernateUtil {
     private static Session session;
     private static SessionFactory sf = new Configuration()
             .configure("hibernate.cfg.xml")
-            .setProperty("hibernate.connection.username", System.getenv("AGORA_DB_USERNAME"))
-            .setProperty("hibernate.connection.password", System.getenv("AGORA_DB_PASSWORD"))
-            .setProperty("hibernate.connection.url", System.getenv("AGORA_DB_URL"))
+//            .setProperty("hibernate.connection.username", System.getenv("AGORA_DB_USERNAME"))
+//            .setProperty("hibernate.connection.password", System.getenv("AGORA_DB_PASSWORD"))
+//            .setProperty("hibernate.connection.url", System.getenv("AGORA_DB_URL"))
+            .setProperty("hibernate.connection.username", "neff")
+            .setProperty("hibernate.connection.password", "steakhouse")
+            .setProperty("hibernate.connection.url", "jdbc:postgresql://training.cajbrppof0jp.us-east-2.rds.amazonaws.com/jwa200810")
             .buildSessionFactory();
 
     private HibernateUtil() {

@@ -26,6 +26,8 @@ public class Article {
 	private String description;
 	private byte[] image;
 	private String publishedAt;
+
+	@Column(columnDefinition = "TEXT")
 	private String content;
 	private int status;
 	
